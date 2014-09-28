@@ -1,0 +1,15 @@
+audio.o: audio.c audio.h
+center.o: center.c entity.h graphics.h audio.h map.h command.h
+command.o: command.c graphics.h command.h entity.h audio.h map.h \
+ particle.h
+entity.o: entity.c entity.h graphics.h audio.h map.h command.h
+flamedart.o: flamedart.c
+font.o: font.c graphics.h
+graphics.o: graphics.c graphics.h
+hero.o: hero.c hero.h entity.h graphics.h audio.h map.h items.h
+heroent.o: heroent.c hero.h entity.h graphics.h audio.h map.h items.h \
+ command.h
+particle.o: particle.c particle.h graphics.h entity.h audio.h map.h
+peon.o: peon.c entity.h graphics.h audio.h map.h command.h particle.h \
+ game.h
+worldents.o: worldents.c entity.h graphics.h audio.h map.h

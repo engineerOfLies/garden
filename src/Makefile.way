@@ -1,0 +1,63 @@
+##############################################################################
+#
+# The Linux-GCC Makefile
+#
+##############################################################################
+
+#
+# Object files.
+#
+
+OBJ = waypoint.o graphics.o map.o path.o entity.o audio.o command.o font.o
+
+#
+# Compiler stuff -- adjust to your system.
+#
+
+# Linux
+
+CC     = gcc
+SDL_CFLAGS = `sdl-config --cflags`
+SDL_LDFLAGS = `sdl-config --libs` -lSDL_image -lSDL_ttf -lSDL_mixer
+LFLAGS = -g -o waypoint
+CFLAGS = -g -Wall -pedantic
+
+#
+# Targets.
+#
+
+darkage: $(OBJ)
+	gcc $(OBJ) $(LFLAGS) $(SDL_LDFLAGS)
+  
+depend:
+	@-rm makefile.dep
+	@echo Creating dependencies.
+	@for i in *.c; do $(CC) $(INC) -MM $$i; done > makefile.dep
+	@echo Done.
+
+clean:
+	rm *.o waypoint
+
+count:
+	wc *.c *.h makefile
+
+#
+# Dependencies.
+#
+
+command.o: command.c command.h graphics.h map.h entity.h
+font.o: font.c graphics.h
+audio.o: audio.c audio.h
+entity.o: entity.c entity.h map.h graphics.h audio.h command.h
+map.o: map.c map.h path.h graphics.h entity.h
+graphics.o: graphics.c graphics.h
+path.o: path.c path.h map.h graphics.h
+waypoint.o: waypoint.c map.h path.h
+
+#
+# The default rule.
+#
+
+.c.o:
+	gcc $(CFLAGS) $(SDL_CFLAGS) -c $<
+

@@ -1,0 +1,13 @@
+heroent.o: heroent.c hero.h entity.h items.h
+hero.o: hero.c hero.h items.h entity.h graphics.h audio.h map.h
+worldents.o: worldents.c entity.h
+center.o: center.c entity.h command.h
+peon.o: peon.c entity.h command.h
+audio.o: audio.c audio.h
+entity.o: entity.c entity.h map.h graphics.h audio.h command.h
+command.o: command.c command.h graphics.h map.h entity.h
+font.o: font.c graphics.h
+map.o: map.c map.h path.h graphics.h entity.h
+graphics.o: graphics.c graphics.h
+path.o: path.c path.h map.h graphics.h
+game.o: game.c graphics.h map.h path.h command.h entity.h hero.h

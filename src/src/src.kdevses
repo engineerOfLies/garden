@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE KDevPrjSession>
+<KDevPrjSession>
+ <LastCompileConfig>(Default)</LastCompileConfig>
+ <Mainframe MaximizeMode="1" />
+ <DocsAndViews NumberOfDocuments="8" >
+  <Doc0 NumberOfViews="1" URL="file:/home/djkehoe/HNCGames/tcoa-quest/src/entity.h" >
+   <View0 line="38" Type="Source" />
+  </Doc0>
+  <Doc1 NumberOfViews="1" URL="file:/home/djkehoe/HNCGames/tcoa-quest/src/hero.h" >
+   <View0 line="126" Type="Source" />
+  </Doc1>
+  <Doc2 NumberOfViews="1" URL="file:/home/djkehoe/HNCGames/tcoa-quest/src/game.c" >
+   <View0 line="126" Type="Source" />
+  </Doc2>
+  <Doc3 NumberOfViews="1" URL="file:/home/djkehoe/HNCGames/tcoa-quest/src/command.c" >
+   <View0 line="480" Type="Source" />
+  </Doc3>
+  <Doc4 NumberOfViews="1" URL="file:/home/djkehoe/HNCGames/tcoa-quest/src/heroent.c" >
+   <View0 line="0" Type="Source" />
+  </Doc4>
+  <Doc5 NumberOfViews="1" URL="file:/home/djkehoe/HNCGames/tcoa-quest/src/peon.c" >
+   <View0 line="111" Type="Source" />
+  </Doc5>
+  <Doc6 NumberOfViews="1" URL="file:/home/djkehoe/HNCGames/tcoa-quest/src/flamedart.c" >
+   <View0 line="0" Type="Source" />
+  </Doc6>
+  <Doc7 NumberOfViews="1" URL="file:/home/djkehoe/HNCGames/tcoa-quest/src/projectiles.h" >
+   <View0 line="4" Type="Source" />
+  </Doc7>
+ </DocsAndViews>
+ <pluginList>
+  <kdevbookmarks>
+   <bookmarks/>
+  </kdevbookmarks>
+  <kdevsubversion>
+   <subversion recurseresolve="1" recurserelocate="1" recursemerge="1" recursecommit="1" base="" recursepropget="1" recurseswitch="1" recurseupdate="1" recursepropset="1" recursediff="1" recurserevert="1" forcemove="1" recursecheckout="1" forceremove="1" recurseadd="1" recurseproplist="1" forcemerge="1" />
+  </kdevsubversion>
+  <kdevvalgrind>
+   <executable path="" params="" />
+   <valgrind path="" params="" />
+   <calltree path="" params="" />
+   <kcachegrind path="" />
+  </kdevvalgrind>
+  <kdevdebugger>
+   <breakpointList/>
+  </kdevdebugger>
+ </pluginList>
+</KDevPrjSession>

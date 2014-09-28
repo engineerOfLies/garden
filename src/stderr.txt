@@ -1,0 +1,1 @@
+Couldn't initialize Font: Couldn't open fonts/font2.ttf

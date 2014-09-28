@@ -1,0 +1,56 @@
+##############################################################################
+#
+# The Linux-GCC Makefile
+#
+##############################################################################
+
+#
+# Object files.
+#
+
+OBJ = mapedit.o graphics.o map.o path.o font.o command.o worldents.o entity.o audio.o
+
+#
+# Compiler stuff -- adjust to your system.
+#
+
+# Linux
+
+CC     = gcc
+SDL_CFLAGS = `sdl-config --cflags`
+SDL_LDFLAGS = `sdl-config --libs` -lSDL_image -lSDL_ttf -lSDL_mixer
+LFLAGS = -g -o mapedit
+CFLAGS = -g -Wall -pedantic
+
+#
+# Targets.
+#
+
+mapedit: $(OBJ)
+	gcc $(OBJ) $(LFLAGS) $(SDL_LDFLAGS)
+  
+depend:
+	@-rm makefile.dep
+	@echo Creating dependencies.
+	@for i in *.c; do $(CC) $(INC) -MM $$i; done > makefile.dep.map
+	@echo Done.
+
+clean:
+	rm *.o mapedit
+
+count:
+	wc *.c *.h Makefile.map
+
+#
+# Dependencies.
+#
+
+include makefile.dep
+
+#
+# The default rule.
+#
+
+.c.o:
+	gcc $(CFLAGS) $(SDL_CFLAGS) -c $<
+

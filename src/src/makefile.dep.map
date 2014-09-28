@@ -1,0 +1,9 @@
+worldents.o: worldents.c entity.c
+audio.o: audio.c audio.h
+entity.o: entity.c entity.h graphics.h map.h audio.h
+command.o: command.c command.h graphics.h map.h entity.h
+font.o: font.c graphics.h
+map.o: map.c map.h graphics.h entity.h
+graphics.o: graphics.c graphics.h
+path.o: path.c path.h map.h graphics.h entity.h
+mapedit.o: mapedit.c graphics.h map.h path.h command.h

@@ -1,0 +1,62 @@
+##############################################################################
+#
+# The Linux-GCC/DOS-GJPP Makefile
+#
+##############################################################################
+
+#
+# Object files.
+#
+
+OBJ = game.o graphics.o
+
+#
+# Compiler stuff -- adjust to your system.
+#
+
+# Linux
+
+CC     = gcc
+SDL_CFLAGS := $(shell sdl-config --cflags)
+SDL_LDFLAGS := $(shell sdl-config --libs)
+LFLAGS = -g -o test SDL_LDFLAGS
+CFLAGS = -g -Wall -pedantic SDL_CFLAGS
+
+# DOS
+
+#CC = gcc
+#LFLAGS = -o test
+#CFLAGS = -Wall -O2
+
+#
+# Targets.
+#
+
+naevo: $(OBJ)
+	gcc $(OBJ) $(LFLAGS)
+
+depend:
+	@-rm makefile.dep
+	@echo Creating dependencies.
+	@for i in *.c; do $(CC) $(INC) -MM $$i; done > makefile.dep
+	@echo Done.
+
+clean:
+	rm *.o test
+
+count:
+	wc *.c *.h makefile
+
+#
+# Dependencies.
+#
+
+include makefile.dep
+
+#
+# The default rule.
+#
+
+.c.o:
+	gcc $(CFLAGS) -c $<
+
